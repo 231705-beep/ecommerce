@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3008:3008"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000

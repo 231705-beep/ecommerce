@@ -1,0 +1,62 @@
+/* DARK MODE AESTHETIC THEME */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0d0f14;
+  color: #e8e8e8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.btn {
+  background: linear-gradient(135deg, #6a5af9, #b74fff);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(183, 79, 255, 0.7);
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 15px 40px;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+  color: #b74fff;
+  transition: 0.2s ease;
+}

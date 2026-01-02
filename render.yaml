@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ecommerce-api
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+    rootDir: backend
+
+  - type: web
+    name: ecommerce-frontend
+    env: docker
+    dockerContext: frontend
+    dockerfilePath: frontend/Dockerfile
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: ecommerce-api
+          property: host
