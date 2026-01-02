@@ -12,13 +12,13 @@ services:
 
   - type: web
     name: ecommerce-frontend
+    plan: free
     runtime: docker
     dockerContext: frontend
-    dockerfilePath: frontend/DockerfileA
-    plan: free
+    dockerfilePath: frontend/Dockerfile
     envVars:
       - key: VITE_API_URL
         fromService:
           type: web
           name: ecommerce-api
-          property: url
+          envVarKey: RENDER_EXTERNAL_URL
