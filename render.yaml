@@ -1,9 +1,10 @@
 services:
   - type: web
     name: ecommerce-api
-    env: node
+    plan: free
+    runtime: node
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: node server.js
     envVars:
       - key: PORT
         value: 5000
@@ -11,13 +12,13 @@ services:
 
   - type: web
     name: ecommerce-frontend
-    env: docker
+    runtime: docker
     dockerContext: frontend
-    dockerfilePath: frontend/Dockerfile
+    dockerfilePath: frontend/DockerfileA
     plan: free
     envVars:
       - key: VITE_API_URL
         fromService:
           type: web
           name: ecommerce-api
-          property: host
+          property: url
